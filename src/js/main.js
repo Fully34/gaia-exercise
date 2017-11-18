@@ -7,7 +7,7 @@ import App from './components/App';
 // redux store stuff
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from './reducers/rootReducer';
+import reducers from './reducers/dataReducer';
 
 // styles
 require('../styles/app.scss');
