@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-
-require('../styles/app.scss');
 
 export default class App extends Component {
+
+    componentWillMount() {
+
+    }
+
     render() {
         return (
             <div class='test'>
@@ -12,5 +14,3 @@ export default class App extends Component {
         )
     }
 }
-
-render(<App />, document.getElementById('app'));
