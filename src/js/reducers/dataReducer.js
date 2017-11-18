@@ -7,7 +7,7 @@ const initialState = {
 
 const dataReducer = (state, action) => {
 	switch(action.type) {
-		case Types.GET_GAIA_EXERCISE_API:
+		case GET_GAIA_EXERCISE_API:
 			return initialState
 	}
 }
