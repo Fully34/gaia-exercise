@@ -20,7 +20,33 @@ module.exports = {
 		new htmlWebpackPlugin({
 			template: path.join(paths.SRC, 'index.html')
 		})
-	]
+	],
+
+	//loaders
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: [
+					'babel-loader'
+				]
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				loaders: ['style-loader', 'css-loader', 'sass-loader']
+			}
+		]
+	},
+
+	// resolve import statements
+	resolve: {
+		extensions: ['.js', '.jsx']
+	},
+
+	// for debugging in browser
+	devtool : 'cheap-source-map'
 
 	// use src folder as starting point for dev server
 	// NOT NEEDED DUE TO HTML WEBPACK PLUGIN
