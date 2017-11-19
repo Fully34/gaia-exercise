@@ -17,5 +17,5 @@ initController(app, express);
 const port = 8000;
 
 app.listen(port, function () {
-  console.log('Gaia started on port 8000');
+  console.log('Data API started on port 8000');
 });
