@@ -20,7 +20,7 @@ function getApiTypes () {
 }
 
 function* worker (action) {
-	debugger;
+
 	try {
 
 		const response = yield call(request, action);
@@ -29,13 +29,11 @@ function* worker (action) {
 			yield put(action.onSuccess(response.data));
 		}
 		else {
-			debugger;
 			yield put(action.onFailure(response));
 		}
 
 	}
 	catch (err) {
-		debugger;
 		yield put(action.onFailure(err));
 	}
 }
