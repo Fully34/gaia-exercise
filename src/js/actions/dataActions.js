@@ -1,9 +1,31 @@
-import { GET_GAIA_EXERCISE_API, GET_GAIA_EXERCISE_SUCCESS, GET_GAIA_EXERCISE_FAILURE } from '../types';
+import Types from '../types';
 
-const getData = (args) => {
+const getData = () => {
+	debugger;
 	return {
-		type: GET_GAIA_DATA_API,
-		args: args,
-
+		type: Types.GET_GAIA_DATA_API,
+		endpoint: 'videos/term/119931',
+		httpMethod: 'GET',
+		onSuccess: getDataSuccess,
+		onFailure: getDataFailure
 	}
+}
+
+const getDataSuccess = (response) => {
+	debugger;
+	return {
+		type: Types.GET_GAIA_DATA_SUCCESS,
+		data: response
+	}
+}
+const getDataFailure = (response) => {
+	return {
+		type: Types.GET_GAIA_DATA_FAILURE
+	}
+}
+
+export {
+	getData,
+	getDataSuccess,
+	getDataFailure
 }

@@ -11,7 +11,7 @@ const paths = {
 
 // config
 module.exports = {
-	entry: path.join(paths.JS, 'main.js'),
+	entry: ['babel-polyfill',  './src/js/main.js'],
 	output: {
 		path: paths.DIST,
 		filename: 'app.bundle.js'

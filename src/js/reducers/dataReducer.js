@@ -1,15 +1,41 @@
+import { createReducer } from 'reduxsauce';
 import { combineReducers } from 'redux';
-import { GET_GAIA_EXERCISE_API, GET_GAIA_EXERCISE_SUCCESS, GET_GAIA_EXERCISE_FAILURE } from '../types';
+import Types from '../types';
 
 const initialState = {
-	data: {}
+	data: {},
+	fetching: false
 };
 
-const dataReducer = (state, action) => {
-	switch(action.type) {
-		case GET_GAIA_EXERCISE_API:
-			return initialState
-	}
+const getData = (state, action) => {
+	return Object.assign({}, state, {
+		...state,
+		fetching: true
+	})
 }
 
-export default dataReducer;
+const getDataSuccess = (state, action) => {
+	return Object.assign({}, state, {
+		...state,
+		data: action.data,
+		fetching: false
+	})
+}
+
+const getDataFailure = (state, action) => {
+	return Object.assign({}, state, {
+		...state,
+		fetching: false,
+		error: true
+	})
+}
+
+const dataReducer = createReducer(initialState,{
+	[Types.GET_GAIA_DATA_API]: getData,
+	[Types.GET_GAIA_DATA_SUCCESS]: getDataSuccess,
+	[Types.GET_GAIA_DATA_FAILURE]: getDataFailure
+});
+
+export default combineReducers({
+	data: dataReducer
+});

@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import createSagaMiddleware from 'redux-saga';
+
 
 import App from './components/App';
 
 // redux store stuff
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers/dataReducer';
-
+import { initialize } from './saga/saga';
 // styles
 require('../styles/app.scss');
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+const sagaMiddleware = createSagaMiddleware();
+const middleware = applyMiddleware(sagaMiddleware);
+const store = createStore(
+	reducers,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	compose(middleware)
+);
 
-
-
+sagaMiddleware.run(initialize);
 
 render(
 	<Provider store={store}>
