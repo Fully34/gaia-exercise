@@ -33,9 +33,14 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.scss$/,
+				test: /\.(scss|css)$/,
 				exclude: /node_modules/,
 				loaders: ['style-loader', 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)(\?[a-z0-9]+)?$/,
+				loader: ['file-loader?name=fonts/[name].[ext]'],
+				exclude: /node_modules/
 			}
 		]
 	},

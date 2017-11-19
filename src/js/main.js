@@ -3,15 +3,17 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 
-
 import App from './components/App';
 
 // redux store stuff
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers/dataReducer';
 import { initialize } from './saga/saga';
-// styles
-require('../styles/app.scss');
+
+// page level styles
+require('../styles/css/bootstrap.css');
+require('../styles/util.scss');
+require('../styles/page.scss');
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = applyMiddleware(sagaMiddleware);
@@ -27,4 +29,5 @@ render(
 	<Provider store={store}>
 		<App />
 	</Provider>
-	, document.getElementById('app'));
+	, document.getElementById('app')
+);

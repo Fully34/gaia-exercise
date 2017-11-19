@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/dataActions';
 
+import Header from './Header';
 
 class App extends Component {
 
@@ -12,12 +13,12 @@ class App extends Component {
 	render() {
 		return (
 			<div className='page'>
-				{/* <Header />*/}
+				<Header />
 				{/* <Hero ...this.props.hero />*/}
 				{/* <Content ...this.props.videoTiles /> */}
 				{/* <LazyLoader /> */}
 			</div>
-		)
+		);
 	}
 }
 

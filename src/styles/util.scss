@@ -1,0 +1,46 @@
+$spacer1: 5px;
+$spacer2: 10px;
+$spacer3: 15px;
+
+.p-1 {
+	padding: $spacer1;
+}
+.p-2 {
+	padding: $spacer2;
+}
+.p-3 {
+	padding: $spacer3;
+}
+.p-x-2 {
+	padding: 0 $spacer2;
+}
+.p-x-3 {
+	padding: 0 $spacer3;
+}
+.p-r-1 {
+	padding-right: $spacer1;
+}
+.m-2 {
+	margin: $spacer1;
+}
+.m-1 {
+	margin: $spacer2;
+}
+.m-1 {
+	margin: $spacer3;
+}
+.m-x-1 {
+	margin: 0 $spacer1;
+}
+.m-x-2 {
+	margin: 0 $spacer2;
+}
+.m-b-2 {
+	margin-bottom: $spacer2;
+}
+.m-b-3 {
+	margin-bottom: $spacer3;
+}
+.text-right {
+	text-align: right;
+}
