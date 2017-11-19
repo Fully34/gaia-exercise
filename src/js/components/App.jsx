@@ -11,8 +11,10 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className='test'>
-				HI I'm REACT
+			<div className='page'>
+				{/* <Header ...this.props.hero />*/}
+				{/* <Content ...this.props.videoTiles /> */}
+				{/* <LazyLoader /> */}
 			</div>
 		)
 	}
