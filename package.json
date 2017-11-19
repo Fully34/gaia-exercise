@@ -1,5 +1,5 @@
 {
-  "name": "gaia-scratch",
+  "name": "gaia-exercise",
   "scripts": {
     "client": "webpack-dev-server",
     "express": "node src/js/server/server.js",
