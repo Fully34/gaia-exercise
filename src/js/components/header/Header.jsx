@@ -15,11 +15,11 @@ const Header = (props) => {
 						<img src="/src/images/logo.svg" alt="gaia logo"/>
 					</div>
 					<div className="col-xs-6 text-right">
-						<span className="profile-name p-r-1">Christopher Fullinwider</span>
+						<span className="profile-name p-r-1">Chris</span>
 						<span className="glyphicon glyphicon-user profile-icon"></span>
 					</div>
 				</div>
-				<div className="panel-footer col-xs-12">
+				<div className="navbar-footer col-xs-12 p-y-2">
 					<div className="col-sm-8">
 						<ul className="nav clearfix m-b-0">
 						{
@@ -30,7 +30,10 @@ const Header = (props) => {
 						</ul>
 					</div>
 					<div className="col-sm-4">
-						<Search placeholder={props.searchPlaceholder} />
+						<input
+							className="nav-search"
+							type="text"
+							placeholder={props.searchPlaceholder}/>
 					</div>
 				</div>
 			</header>
