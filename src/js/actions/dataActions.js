@@ -1,7 +1,6 @@
 import Types from '../types';
 
 const getData = () => {
-	debugger;
 	return {
 		type: Types.GET_GAIA_DATA_API,
 		endpoint: 'videos/term/119931',
@@ -12,7 +11,6 @@ const getData = () => {
 }
 
 const getDataSuccess = (response) => {
-	debugger;
 	return {
 		type: Types.GET_GAIA_DATA_SUCCESS,
 		data: response
