@@ -20,7 +20,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		state: state
+		hero: state.data.hero,
+		videoTiles: state.data.videoTiles
 	}
 }
 

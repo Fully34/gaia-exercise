@@ -11,7 +11,7 @@ function validateTitle(title) {
 	return {
 		imageUrl: hero_image && hero_image.hero_320x200 || '',
 		seriesTitle: title.title || 'no title available',
-		likeCount: fivestar && fivestar.up_count || null,
+		likeCount: fivestar && fivestar.up_count.value || null,
 		season: season && season[0].value || null,
 		episode: episode && episode[0].value || null,
 		duration: preview && preview.duration || null

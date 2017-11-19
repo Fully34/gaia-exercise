@@ -3,8 +3,9 @@ import { combineReducers } from 'redux';
 import Types from '../types';
 
 const initialState = {
-	pageData: {},
-	fetching: false
+	fetching: false,
+	hero: {},
+	videoTiles: []
 };
 
 const getData = (state, action) => {
@@ -16,7 +17,7 @@ const getData = (state, action) => {
 
 const getDataSuccess = (state, action) => {
 	return Object.assign({}, state, {
-		pageData: action.data,
+		...action.data,
 		fetching: false
 	})
 }
