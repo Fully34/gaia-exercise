@@ -12,7 +12,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className='page'>
-				{/* <Header ...this.props.hero />*/}
+				{/* <Header />*/}
+				{/* <Hero ...this.props.hero />*/}
 				{/* <Content ...this.props.videoTiles /> */}
 				{/* <LazyLoader /> */}
 			</div>
