@@ -3,7 +3,7 @@ import Types from '../types';
 const getData = () => {
 	return {
 		type: Types.GET_GAIA_DATA_API,
-		endpoint: 'videos/term/119931',
+		endpoint: '/landing',
 		httpMethod: 'GET',
 		onSuccess: getDataSuccess,
 		onFailure: getDataFailure

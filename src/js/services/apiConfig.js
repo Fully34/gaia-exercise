@@ -1,5 +1,5 @@
 
 export default {
-	baseURL: 'https://d6api.gaia.com/',
+	baseURL: 'http://localhost:8000',
 	headers: {'Content-Type': 'application/json'}
 };

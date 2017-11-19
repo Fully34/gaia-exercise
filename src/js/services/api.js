@@ -8,7 +8,7 @@ function request (action) {
 		url: action.endpoint,
 		method: action.httpMethod,
 		baseURL: config.baseURL,
-		headers: Object.assign({}, config.headers, action.headers)
+		// headers: Object.assign({}, config.headers, action.headers)
 	});
 }
 
