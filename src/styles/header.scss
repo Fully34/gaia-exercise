@@ -1,14 +1,41 @@
-.navbar {
+.navbar-header{
 	position: relative;
-	padding: 0 20px;
 }
-
 .profile-icon {
 	font-size: 30px;
 }
-
 .profile-name {
 	top: -0.5em;
 	position: relative;
 	font-size: 18px;
+}
+.navbar-footer {
+	background-color: #f5f5f5;
+	border-top: 1px solid #dddddd;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.nav {
+	list-style: none;
+	padding-top: 3px;
+	padding-left: 0px;
+}
+.nav-item{
+	float: left;
+	padding: 3px 0;
+}
+.nav-link {
+	cursor: pointer;
+	color: #44576b;
+}
+.nav-link:hover {
+	color: #ff5510;
+	font-style: none;
+}
+.nav-search {
+	width: 100%;
+	padding: 3px 5px;
+}
+.nav-search:focus {
+	outline:none;
 }

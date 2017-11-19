@@ -1,6 +1,8 @@
 var requestPromise = require('request-promise');
 
-// validate title object
+/**
+ * validate Gaia 'title' object from and create/return domain object
+ */
 function validateTitle(title) {
 	const hero_image = title.hero_image;
 	const fivestar = title.fivestar;
@@ -18,7 +20,9 @@ function validateTitle(title) {
 	}
 }
 
-// function to map return from gaia
+/**
+ * take response and return data in a useable form
+ */
 function mapData(response) {
 
 	const term = response.term;
@@ -39,8 +43,10 @@ function mapData(response) {
 	};
 }
 
-// use request-promise to make the request as a promise
-// then map the result
+/**
+ * use request-promise to make data request
+ * map the returned data to useable domain objects
+ */
 module.exports = {
 	getData: () => {
 		return requestPromise({

@@ -2,9 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/dataActions';
 
-import Header from './Header';
+import Header from './header/Header';
 
 class App extends Component {
+	
+	constructor() {
+
+		super();
+
+		this.state = {
+			nav: {
+				navLinks: [
+					'MY GAIA',
+					'YOGA',
+					'TRANSFORMATION',
+					'SEEKING TRUTH',
+					'FILMS & DOCS',
+					'CENTERS'
+				],
+				searchPlaceholder: 'Search...'
+			}
+		}
+	}
 
 	componentWillMount() {
 		this.props.getData();
@@ -13,7 +32,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className='page'>
-				<Header />
+				<Header {...this.state.nav} />
 				{/* <Hero ...this.props.hero />*/}
 				{/* <Content ...this.props.videoTiles /> */}
 				{/* <LazyLoader /> */}
