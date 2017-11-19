@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import Types from '../types';
 
 const initialState = {
-	data: {},
+	pageData: {},
 	fetching: false
 };
 
@@ -16,8 +16,7 @@ const getData = (state, action) => {
 
 const getDataSuccess = (state, action) => {
 	return Object.assign({}, state, {
-		...state,
-		data: action.data,
+		pageData: action.data,
 		fetching: false
 	})
 }
