@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/dataActions';
 
 import Header from './header/Header';
+import Hero from './hero/Hero';
 
 class App extends Component {
 	
@@ -33,7 +34,7 @@ class App extends Component {
 		return (
 			<div className='page'>
 				<Header {...this.state.nav} />
-				{/* <Hero ...this.props.hero />*/}
+				<Hero {...this.props.hero} />
 				{/* <Content ...this.props.videoTiles /> */}
 				{/* <LazyLoader /> */}
 			</div>

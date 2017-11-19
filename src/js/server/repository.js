@@ -32,11 +32,9 @@ function mapData(response) {
 
 	return {
 		hero: {
-			title: term.name,
+			title: term.name.toUpperCase(),
 			text: term.body,
-			largeBannerUrl: term.termImages.hero.hero_1070x300,
-			mediumBannerUrl: term.termImages.hero.hero_700x300,
-			smallBannerUrl: term.termImages.hero.hero_320x200,
+			largeBannerUrl: term.termImages.hero.hero_1125x414,
 			tileUrl: term.termImages.tile.tile_532x400
 		},
 		videoTiles: videoTiles

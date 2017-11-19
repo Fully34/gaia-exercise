@@ -1,0 +1,35 @@
+.hero-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.large-banner,
+	.mobile-banner {
+		width: 100%;
+	}
+	.hero-text-container {
+		margin: 0 auto;
+		position: absolute;
+		max-width: 75%;
+		color: #fff;
+	}
+}
+
+@media only screen and (max-width: 768px) { 
+	.img.mobile-banner {
+		display: block;
+	}
+	.img.large-banner {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.img.mobile-banner {
+		display: none;
+	}
+	.img.large-banner {
+		display: block;
+	}
+}

@@ -1,14 +1,11 @@
 import React from 'react';
-
 import NavLink from './NavLink';
-import Search from './Search';
 
 require('../../../styles/header.scss')
 
 const Header = (props) => {
-
 	return (
-		<section class="row">
+		<section className="row">
 			<header className="navbar-header col-xs-12">
 				<div className="clearfix p-x-4 p-y-2">
 					<div className="col-xs-6">
