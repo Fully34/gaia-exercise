@@ -1,6 +1,7 @@
 import React from 'react';
 import NavLink from './NavLink';
 
+// get header css
 require('../../../styles/header.scss')
 
 const Header = (props) => {

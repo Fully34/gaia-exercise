@@ -1,5 +1,6 @@
 import React from 'react';
 
+// get lazy loader css
 require('../../../styles/lazy-loader.scss');
 
 const LazyLoader = (props) => {

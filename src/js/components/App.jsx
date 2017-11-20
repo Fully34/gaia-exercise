@@ -6,6 +6,7 @@ import Header from './header/Header';
 import Hero from './hero/Hero';
 import Content from './content/Content';
 import LazyLoader from './lazy-loader/LazyLoader';
+import Spinner from './spinner/Spinner';
 
 class App extends Component {
 	
@@ -79,6 +80,7 @@ class App extends Component {
 
 		return (
 			<div className='page'>
+				{ this.props.fetching && <Spinner /> }
 				<Header {...this.state.nav} />
 				<Hero {...this.props.hero} />
 				<Content
@@ -95,9 +97,12 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+	const data = state.data;
+
 	return {
-		hero: state.data.hero,
-		videoTiles: state.data.videoTiles
+		hero: data.hero,
+		videoTiles: data.videoTiles,
+		fetching: data.fetching
 	}
 }
 

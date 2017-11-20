@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoTile from './VideoTile';
 
-// content css module
+// get content css
 require('../../../styles/content.scss');
 
 const Content = (props) => {
@@ -14,6 +14,7 @@ const Content = (props) => {
 					</span>
 					<span className="glyphicon glyphicon-arrow-down"></span>
 				</div>
+				<input type="select"/>
 			</div>
 			<ul className="video-tile-list">
 			{

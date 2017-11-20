@@ -1,5 +1,6 @@
 import React from 'react';
 
+// get hero css
 require('../../../styles/hero.scss');
 
 const Hero = (props) => {
