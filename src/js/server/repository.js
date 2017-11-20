@@ -11,15 +11,24 @@ function validateTitle(title) {
 	const preview = title.preview;
 	const series = title.series;
 
+	const seasonText = season && season[0].value || '';
+	const episodeText = episode && episode[0].value || '';
+	const seasonEpisodeText = seasonText && episodeText // really basic validation
+		? `Season ${seasonText} Episode ${episodeText}`
+		: '';
+
+	const durationText = preview && preview.duration
+		? `${preview.duration} min`
+		: '';
+
 	// return a 'videoTile' domain object
 	return {
-		imageUrl: hero_image && hero_image.hero_570x300 || '',
-		videoTitle: title.title || 'video title unavailable',
-		seriesTitle: series && series.title || null,
+		imageUrl: hero_image && hero_image.hero_570x300 || 'http://via.placeholder.com/570x300',
+		videoTitle: title.title || '',
+		seriesTitle: series && series.title || '',
 		likeCount: fivestar && fivestar.up_count.value || null,
-		season: season && season[0].value || null,
-		episode: episode && episode[0].value || null,
-		duration: preview && preview.duration || null
+		seasonEpisodeText: seasonEpisodeText,
+		durationText: durationText
 	}
 }
 

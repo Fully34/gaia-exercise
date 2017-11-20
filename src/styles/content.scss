@@ -1,17 +1,33 @@
 .content-container {
 	margin: 0 20px;
+	.content-filter-row {
+		color: #43c9ea;
 
+		.glyphicon-arrow-down {
+			position: relative;
+			top: 7px;
+		}
+	}
 	.video-tile-list {
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
 		padding-left: 0;
+		clear: both;
 
 		.video-tile {
-			width: 100%;
-
 			.video-tile-image {
 				width: 100%;
+			}
+
+			.video-tile-meta {
+
+				.series-title,
+				.season-episode,
+				.duration {
+					font-style: italic;
+					color: #969696;
+				}
 			}
 		}
 	}

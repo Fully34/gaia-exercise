@@ -4,7 +4,7 @@ require('../../../styles/hero.scss');
 
 const Hero = (props) => {
 	return (
-		<section className="hero-container">
+		<section className="hero-container m-b-4">
 			<img
 				className="img img-responsive large-banner"
 				src={props.largeBannerUrl}
