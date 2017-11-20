@@ -38,12 +38,12 @@
 		* redux state is populated by this data
 		* the connected \<App /\> passes props from redux (and, in some cases, its own component state) down to the functional components that consume them
 	* the react application does not interact with the data returned from the API in any way other than to render (with one small exception)
-		* \<App /\> reads the full array of 'videoTile' domain objects in redux state and returns a subset of them to facilitate lazily loading <VideoTile /> components
-		* instead of just passing state.data.videoTiles directly through to <Content />, \<App /\> tracks how many <VideoTile /> components are currently supposed to display.  It then creates a new array from the full array in redux state (starting with the first element and going to n).  It then passes the new array to <Content />
-		* the <LazyLoader /> component is passed a handler which increases the number of 'videoTile' domain objects passed to <Content /> on each click
+		* \<App /\> reads the full array of 'videoTile' domain objects in redux state and returns a subset of them to facilitate lazily loading \<VideoTile /\> components
+		* instead of just passing state.data.videoTiles directly through to \<Content /\>, \<App /\> tracks how many \<VideoTile /\> components are currently supposed to display.  It then creates a new array from the full array in redux state (starting with the first element and going to n).  It then passes the new array to \<Content /\>
+		* the \<LazyLoader /\> component is passed a handler which increases the number of 'videoTile' domain objects passed to \<Content /\> on each click
 	* redux state is used exclusively to store  data returned from the API and flag properties associated with making a data request
-		* ie: the fetching flag is true when the data request is pending, so we render the <Spinner />
-		* when the data is returned, fetching gets set to false, so <Spinner /> will go away
+		* ie: the fetching flag is true when the data request is pending, so we render the \<Spinner /\>
+		* when the data is returned, fetching gets set to false, so \<Spinner /\> will go away
 	* component state is used on \<App /\> to store a small amount of UI specific data, as well as the data needed to accomplish the lazy loading described above
 
 * Styles
