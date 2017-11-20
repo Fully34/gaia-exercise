@@ -17,6 +17,7 @@ const getData = (state, action) => {
 
 const getDataSuccess = (state, action) => {
 	return Object.assign({}, state, {
+		// data is mapped and validated in the API
 		...action.data,
 		fetching: false
 	})

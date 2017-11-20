@@ -40,11 +40,12 @@ class App extends Component {
 	}
 
 	getNextTiles() {
-
+		
 	}
 
 	render() {
 		const content = this.state.content;
+		// ideally 'paginating' the video tiles should be done on the API
 		const videosToShow = this.props.videoTiles.slice(
 			0,
 			content.currentTileIndex

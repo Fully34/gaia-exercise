@@ -11,7 +11,7 @@ const Hero = (props) => {
 				alt="banner image"/>
 			<img
 				className="img img-responsive mobile-banner"
-				src={props.tileUrl}
+				src={props.mobileBannerUrl}
 				alt="mobile banner image"/>
 			<div className="hero-text-container">
 				<h3 className="hero-title">{props.title}</h3>

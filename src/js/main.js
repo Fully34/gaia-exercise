@@ -15,6 +15,7 @@ require('../styles/css/bootstrap.css');
 require('../styles/util.scss');
 require('../styles/page.scss');
 
+// create saga and store
 const sagaMiddleware = createSagaMiddleware();
 const middleware = applyMiddleware(sagaMiddleware);
 const store = createStore(
@@ -23,6 +24,7 @@ const store = createStore(
 	compose(middleware)
 );
 
+// run saga
 sagaMiddleware.run(initialize);
 
 render(

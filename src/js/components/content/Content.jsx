@@ -5,7 +5,6 @@ import VideoTile from './VideoTile';
 require('../../../styles/content.scss');
 
 const Content = (props) => {
-
 	return (
 		<section className="content-container">
 			<div className="content-filter-row col-xs-12 m-b-2">

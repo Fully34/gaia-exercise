@@ -1,9 +1,9 @@
 var requestPromise = require('request-promise');
 
 /**
- * validate Gaia 'title' object from and create/return domain object
+ * validate Gaia 'title' object and create/return 'videoTile' domain object
  */
-function validateTitle(title) {
+function createVideoTile(title) {
 	const hero_image = title.hero_image;
 	const fivestar = title.fivestar;
 	const season = title.fields.season;
@@ -21,7 +21,6 @@ function validateTitle(title) {
 		? `${preview.duration} min`
 		: '';
 
-	// return a 'videoTile' domain object
 	return {
 		imageUrl: hero_image && hero_image.hero_570x300 || 'http://via.placeholder.com/570x300',
 		videoTitle: title.title || '',
@@ -33,22 +32,36 @@ function validateTitle(title) {
 }
 
 /**
+ * validate the 'term' object from Gaia and create/return a 'hero' domain object
+ */
+function createHero(term) {
+	const termImages = term && term.termImages || null;
+	const hero = termImages && termImages.hero || null;
+	const largeBannerUrl = hero && hero.hero_1125x414 || 'http://via.placeholder.com/1125x414';
+	const tile = termImages && termImages.tile || null;
+	const mobileBannerUrl = tile && tile.tile_532x400 || 'http://via.placeholder.com/1125x414';
+
+	return {
+		title: term.name.toUpperCase() || '',
+		text: term.body || '',
+		largeBannerUrl: largeBannerUrl,
+		mobileBannerUrl: mobileBannerUrl
+	}
+}
+
+/**
  * take response and return data in a useable form
  */
 function mapData(response) {
 
 	const term = response.term;
 	const videoTiles = response.titles.map((el, index) => {
-		return validateTitle(el);
+		return createVideoTile(el);
 	});
+	const hero = createHero(term);
 
 	return {
-		hero: {
-			title: term.name.toUpperCase(),
-			text: term.body,
-			largeBannerUrl: term.termImages.hero.hero_1125x414,
-			tileUrl: term.termImages.tile.tile_532x400
-		},
+		hero: hero,
 		videoTiles: videoTiles
 	};
 }
