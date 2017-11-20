@@ -1,0 +1,186 @@
+.mk-sm-root {
+	display: inline-block;
+	position: relative;
+	padding: 0 10px;
+  }
+  
+  .mk-sm {
+	display: none;
+  }
+  
+  .mk-sm-root.device .mk-sm {
+	background: transparent;
+	/* bug fix for positioning selects */
+	display: inline-block;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+  }
+  
+  .mk-sm-shadow {
+	display: inline-block;
+	position: relative;
+  }
+  
+  .mk-sm-trigger {
+	background: transparent;
+	color: #333;
+	position: relative;
+  }
+  
+  .mk-sm-trigger[aria-expanded="true"],
+  .mk-sm-trigger.focus {
+	color: #43c9ea;
+	border-color: #00c9c9;
+  }
+  
+  .mk-sm-trigger.disabled {
+	color: #4a4a4a;
+	border-color: #4a4a4a;
+  }
+  
+  .mk-sm-shadow.transitions .mk-sm-trigger {
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+  }
+  
+  .mk-sm-trigger:before {
+	content: "\203A";
+	font-size: 18px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 1rem;
+	top: calc(50% - 1.5rem);
+	transform: rotate(90deg);
+  }
+  
+  .mk-sm-input {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0.625rem;
+	position: relative;
+	z-index: 1;
+  }
+  
+  .mk-sm-list {
+	background: #d1d9e2;
+	border-top: 1px solid #00c9c9;
+	box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.4);
+	display: none;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	min-width: 100%;
+	position: absolute;
+	top: 100%;
+	z-index: 2;
+  }
+  
+  .mk-sm-list.transition {
+	display: block;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+  }
+  
+  .mk-sm-list[aria-hidden="false"] {
+	display: block;
+	opacity: 1;
+  }
+  
+  .mk-sm-item {
+	list-style: none;
+  }
+  
+  .mk-sm-option,
+  .mk-sm-optgroup {
+	background: tranparent;
+	color: #4a4a4a;
+	display: block;
+	font-size: 1.5rem;
+	padding: 0.625rem;
+	position: relative;
+  }
+  
+  .mk-sm-list.transition .mk-sm-option,
+  .mk-sm-list.transition .mk-sm-optgroup {
+	cursor: default;
+  }
+  
+  .mk-sm-option:hover,
+  .mk-sm-optgroup:hover,
+  .mk-sm-option:active,
+  .mk-sm-optgroup:active,
+  .mk-sm-option:focus,
+  .mk-sm-optgroup:focus {
+	background: transparent;
+	color: #4a4a4a;
+	text-decoration: none;
+  }
+  
+  .mk-sm-shadow.transitions .mk-sm-option,
+  .mk-sm-shadow.transitions .mk-sm-optgroup {
+	transition: background 0.5s;
+	-webkit-transition: background 0.5s;
+  }
+  
+  .mk-sm-option.active,
+  .mk-sm-optgroup.active {
+	color: #4a4a4a;
+	background: #92a3b3;
+  }
+  
+  .mk-sm-optgroup {
+	font-weight: bold;
+  }
+  
+  .mk-sm-optgroup[role="presentation"] {
+	cursor: default;
+  }
+  
+  .mk-sm-optgroup[role="presentation"]:hover {
+	cursor: default;
+	color: #4a4a4a;
+	background: inherit;
+  }
+  
+  .mk-sm-option[aria-selected="true"]:after {
+	color: #00c9c9;
+	content: "";
+	font-size: 2rem;
+	position: absolute;
+	top: 0;
+	right: 1rem;
+  }
+  
+  .mk-sm-option[aria-disabled="true"] {
+	background: transparent;
+	color: #92a3b3;
+	cursor: default;
+  }
+  
+  .mk-sm-removable {
+	background: #92a3b3;
+	border-top: 1px solid #5c738a;
+  }
+  
+  .mk-sm-removable.active {
+	background: #5c738a;
+  }
+  
+  .mk-sm-alt {
+	display: block;
+	font-size: 80%;
+  }
+  
+  .mk-sm-removable .mk-sm-alt {
+	display: inline-block;
+	margin-left: 1rem;
+  }
+  

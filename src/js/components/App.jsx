@@ -9,7 +9,7 @@ import LazyLoader from './lazy-loader/LazyLoader';
 import Spinner from './spinner/Spinner';
 
 class App extends Component {
-	
+
 	constructor() {
 
 		super();

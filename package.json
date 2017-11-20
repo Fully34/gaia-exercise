@@ -26,6 +26,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-register": "^6.26.0",
+    "mk-ui": "^2.0.60",
     "node-sass": "^4.7.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
