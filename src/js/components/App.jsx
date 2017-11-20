@@ -5,6 +5,7 @@ import { getData } from '../actions/dataActions';
 import Header from './header/Header';
 import Hero from './hero/Hero';
 import Content from './content/Content';
+import LazyLoader from './lazy-loader/LazyLoader';
 
 class App extends Component {
 	
@@ -12,10 +13,13 @@ class App extends Component {
 
 		super();
 
+		// binding event handlers in the constructor
 		this.handlers = {
-			getNextTiles: this.getNextTiles.bind(this)
+			getNextTiles: this.getNextTiles.bind(this),
+			scrollToTop: this.scrollToTop.bind(this)
 		};
 
+		// using component state for simple display data
 		this.state = {
 			nav: {
 				navLinks: [
@@ -30,7 +34,7 @@ class App extends Component {
 			},
 			content: {
 				currentTileIndex: 12, // default to displaying the first 12 tiles
-				tileIndexIncrement: 12 // when the load more button is clicked, increament currentTileIndex by this number to get more
+				tileIndexIncrement: 12 // when the load more button is clicked, increment currentTileIndex by this number to get more
 			}
 		}
 	}
@@ -39,8 +43,30 @@ class App extends Component {
 		this.props.getData();
 	}
 
-	getNextTiles() {
-		
+	scrollToTop(e) {
+		e.preventDefault();
+		return window.scrollTo(0,0);
+	}
+	
+	getNextTiles(e) {
+		e.preventDefault();
+		const content = this.state.content;
+		const totalVideoTiles = this.props.videoTiles.length;
+		let newTileIndex = content.currentTileIndex + content.tileIndexIncrement;
+
+		// don't want the new index to be greater than the lengh of the tile array!
+		if (content.currentTileIndex > totalVideoTiles) {
+			newTileIndex = totalVideoTiles;
+		}
+
+		// set current tile index to add more tiles to the UI
+		return this.setState({
+			...this.state,
+			content: {
+				...this.state.content,
+				currentTileIndex: newTileIndex
+			}
+		});
 	}
 
 	render() {
@@ -59,7 +85,10 @@ class App extends Component {
 					videoTiles={videosToShow}
 					currentTileIndex={content.currentTileIndex}
 					tileIndexIncrement={content.tileIndexIncrement} />
-				{/* <LazyLoader /> */}
+				<LazyLoader
+					getNextTiles={this.handlers.getNextTiles}
+					scrollToTop={this.handlers.scrollToTop}
+				/>
 			</div>
 		);
 	}

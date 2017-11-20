@@ -1,0 +1,25 @@
+.lazy-loader-container {
+	.load-btn {
+		padding: 5px 60px;
+	}
+	.btn-primary {
+		background-color: gray;
+		border-color: #676666;
+	}
+	.btn-primary:hover {
+		background-color: #fff;
+		color: #676666;
+	}
+	.btn-primary:focus {
+		background-color: gray;
+		border-color: #676666;
+	}
+	.btn-primary:active {
+		background-color: gray;
+		border-color: #676666;
+	}
+	.btn-primary:active:focus {
+		background-color: gray;
+		border-color: #676666;
+	}
+}
