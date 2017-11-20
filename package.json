@@ -2,7 +2,7 @@
   "name": "gaia-exercise",
   "scripts": {
     "client": "webpack-dev-server",
-    "express": "node src/js/server/server.js",
+    "express": "node src/server/server.js",
     "start": "bash start.sh",
     "build": "webpack"
   },

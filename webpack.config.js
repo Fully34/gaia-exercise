@@ -52,10 +52,4 @@ module.exports = {
 
 	// for debugging in browser
 	devtool : 'cheap-source-map'
-
-	// use src folder as starting point for dev server
-	// NOT NEEDED DUE TO HTML WEBPACK PLUGIN
-	// devServer: {
-	// 	contentBase: paths.SRC
-	// }
 };

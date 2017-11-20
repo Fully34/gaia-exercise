@@ -53,7 +53,6 @@ function createHero(term) {
  * take response and return data in a useable form
  */
 function mapData(response) {
-
 	const term = response.term;
 	const videoTiles = response.titles.map((el, index) => {
 		return createVideoTile(el);
