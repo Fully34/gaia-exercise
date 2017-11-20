@@ -2,9 +2,13 @@
 
 ### Steps to run the application
 > git clone https://github.com/Fully34/gaia-exercise.git
+
 > cd gaia-exercise
+
 > npm install
+
 > npm start
+
 > navigate to localhost:8080
 
 ### Application Structure
