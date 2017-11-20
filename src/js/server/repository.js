@@ -9,10 +9,13 @@ function validateTitle(title) {
 	const season = title.fields.season;
 	const episode = title.fields.episode;
 	const preview = title.preview;
+	const series = title.series;
 
+	// return a 'videoTile' domain object
 	return {
-		imageUrl: hero_image && hero_image.hero_320x200 || '',
-		seriesTitle: title.title || 'no title available',
+		imageUrl: hero_image && hero_image.hero_570x300 || '',
+		videoTitle: title.title || 'video title unavailable',
+		seriesTitle: series && series.title || null,
 		likeCount: fivestar && fivestar.up_count.value || null,
 		season: season && season[0].value || null,
 		episode: episode && episode[0].value || null,
